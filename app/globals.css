@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+Arabic:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+        @apply font-noto font-bold text-4xl md:text-3xl lg:text-5xl;
+    }
+    
+h2 {
+        @apply font-amiri font-bold text-xl md:text-2xl lg:text-4xl;
+}
+
+h3 {
+        @apply font-amiri font-bold text-lg md:text-xl lg:text-2xl;
+}
+
+p .large {
+        @apply font-noto text-sm md:text-base lg:text-xl ;
+}
+
+p .medium{
+        @apply font-noto text-sm md:text-base lg:text-base ;
+}
+
+p .small{
+        @apply font-noto text-[10px] md:text-xs lg:text-xs ;
+}
