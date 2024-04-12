@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 h1 {
-        @apply font-noto font-bold text-4xl md:text-3xl lg:text-5xl;
+        @apply font-noto font-medium text-lg md:text-xl lg:text-2xl;
     }
     
 h2 {
-        @apply font-amiri font-bold text-xl md:text-2xl lg:text-4xl;
+        @apply font-amiri font-bold text-sm md:text-lg lg:text-xl;
 }
 
 h3 {
@@ -27,3 +27,39 @@ p .medium{
 p .small{
         @apply font-noto text-[10px] md:text-xs lg:text-xs ;
 }
+
+.swiper-slide{
+        width: fit-content !important;
+        height: fit-content !important;
+}
+
+.darker{
+        filter: invert(50%) sepia(74%) saturate(331%) hue-rotate(25deg) brightness(90%) contrast(90%);
+}
+
+.custom-pagination-bullet{
+        width: 30px !important;
+        height: 20px;
+        background-color: #434B2F !important; 
+        margin: 0 8px;
+        border-radius: 10px !important; 
+      }
+
+.swiper-pagination-bullet-active {
+        width: 38px !important;
+        border-radius: 10px !important;
+        transition: width 0.3s ease, border-radius 0.3s ease !important;
+}
+.swiper{
+        overflow: visible !important;
+}
+.swiper-pagination {
+        bottom: -40px !important;
+}
+
+/* .swiper-slide-next{
+       rotate: 30deg !important;
+}
+.swiper-slide-prev{
+        rotate: -30deg !important;
+ } */
