@@ -5,6 +5,8 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./utils/**/*.{js,ts,jsx,tsx,mdx}",
+
   ],
   theme: {
     extend: {
@@ -13,7 +15,8 @@ const config: Config = {
                 'green': '#858C36',
                 'green-light': '#BABE8E',
                 'red': '#EC0404',
-                'orange': '#FF7B02'
+                'orange': '#FF7B02',
+                'white': '#F9FAF7'
         },
         fontFamily:{
                 noto: ["Noto Sans Arabic", 'sans-serif'],
