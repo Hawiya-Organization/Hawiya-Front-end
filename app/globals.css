@@ -9,7 +9,7 @@ h1 {
     }
     
 h2 {
-        @apply font-amiri font-bold text-sm md:text-lg lg:text-xl;
+        @apply font-amiri font-bold text-xl md:text-xl lg:text-3xl;
 }
 
 h3 {
@@ -37,6 +37,9 @@ p .small{
         filter: invert(50%) sepia(74%) saturate(331%) hue-rotate(25deg) brightness(90%) contrast(90%);
 }
 
+.white-bg{
+        filter: brightness(0) saturate(100%) invert(99%) sepia(79%) saturate(324%) hue-rotate(300deg) brightness(103%) contrast(108%)
+}
 .custom-pagination-bullet{
         width: 30px !important;
         height: 20px;

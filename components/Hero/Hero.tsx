@@ -27,9 +27,9 @@ export default function Hero() {
                 }
               };
   return (
-    <div className={`flex gap-20 flex-col bg-green-darker overflow-hidden items-center ${showDescription? 'p-0 justify-center' : 'p-10 justify-start' }  ${poems.length? 'h-fit' : 'h-screen' } rounded-[32px] h-[90vh] hero relative`}>
-        <Image className='absolute top-0 left-0' src={oliveLeft} alt='olive'></Image>
-        <Image className='absolute bottom-0 right-0' src={oliveRight} alt='olive'></Image>
+    <div className={`flex gap-20 flex-col mt-0 m-6 bg-green-darker overflow-hidden items-center ${showDescription? 'p-0 justify-center' : 'p-10 justify-start' }  ${poems.length? 'h-fit' : 'h-screen' } rounded-[32px] h-[90vh] hero relative`}>
+        <Image className='absolute top-[-20%] left-[-20%] lg:top-0 lg:left-0' src={oliveLeft} alt='olive'></Image>
+        <Image className='absolute bottom-[-20%] right-[-20%] lg:bottom-0 lg:right-0' src={oliveRight} alt='olive'></Image>
         <Image className='absolute' width={1000} src={leaf} alt='leaf'></Image>
 
         <div className="flex flex-col z-50 gap-6">

@@ -35,7 +35,7 @@ export default function Featured() {
                 }
         ]
   return (
-    <div className="flex flex-col h-screen mt-10 gap-20 items-center justify-center relative">
+    <div className="flex flex-col h-screen mt-10 overflow-hidden gap-20 items-center justify-center relative">
         <h2 className='text-4xl z-50'>مختارات</h2>
         <div className='relative flex w-full items-center justify-center'>
         <div className=" absolute rounded-full bg-opacity-80 bg-green-light blur-[50px] h-[500px] w-[500px] "></div>
