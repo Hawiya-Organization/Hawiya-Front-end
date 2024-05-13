@@ -37,6 +37,10 @@ p .small{
         filter: invert(50%) sepia(74%) saturate(331%) hue-rotate(25deg) brightness(90%) contrast(90%);
 }
 
+.olive-dark{
+        filter: brightness(0) saturate(100%) invert(35%) sepia(28%) saturate(430%) hue-rotate(36deg) brightness(97%) contrast(95%)
+}
+
 .white-bg{
         filter: brightness(0) saturate(100%) invert(99%) sepia(79%) saturate(324%) hue-rotate(300deg) brightness(103%) contrast(108%)
 }
