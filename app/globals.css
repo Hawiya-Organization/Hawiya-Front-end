@@ -44,6 +44,15 @@ p .small{
 .white-bg{
         filter: brightness(0) saturate(100%) invert(99%) sepia(79%) saturate(324%) hue-rotate(300deg) brightness(103%) contrast(108%)
 }
+
+.bg-frame {
+        background-image: url('/frame.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      
+      
 .custom-pagination-bullet{
         width: 30px !important;
         height: 20px;
