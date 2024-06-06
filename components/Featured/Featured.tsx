@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -9,31 +9,40 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import FeaturedCard from './Featured.card'
 import moufdi from '../../public/moufdi.png'
+import axios from 'axios';
 
 export default function Featured() {
+        const [authors, setAuthors] = useState([])
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState('');
         const pagination = {
                 clickable: true,
                 renderBullet: function (index: any, className: string) {
                   return '<span class="custom-pagination-bullet ' + className + '">' + '' + '</span>';
                 },
               };
-        const authors = [
-                {
-                        author: 'شاعر ١',
-                        biography: 'شاعر الثورة الجزائرية، ومؤلف النشيد الوطني الجزائري «قسما',
-                        pic: '../../public/moufdi.png'
-                },
-                {
-                        author: 'شاعر ٢',
-                        biography:  'شاعر الثورة الجزائرية، ومؤلف النشيد الوطني الجزائري «قسما',
-                        pic: '../../public/moufdi.png'
-                },
-                {
-                        author: 'شاعر٣',
-                        biography:  'شاعر الثورة الجزائرية، ومؤلف النشيد الوطني الجزائري «قسما',
-                        pic: '../../public/moufdi.png'
-                }
-        ]
+
+              useEffect(() => {
+                const fetchPoems = async () => {
+                  try {
+                    const response = await axios.get('/api/authors/index');
+                    console.log(response)
+                    const allAuthors = response.data.data;
+
+                    const shuffledAuthors = allAuthors.sort(() => 0.5 - Math.random());
+                    const selectedAuthors = shuffledAuthors.slice(0, 5);
+                    setAuthors(selectedAuthors);
+                    setLoading(false);
+                  } catch (error) {
+                    console.error('Error fetching poems:', error);
+                    setError('Failed to fetch poems');
+                    setLoading(false);
+                  }
+                };
+            
+                fetchPoems();
+              }, []);
+       
   return (
     <div className="flex flex-col h-screen mt-10 overflow-hidden gap-20 items-center justify-center relative">
         <h2 className='text-4xl z-50'>مختارات</h2>
@@ -58,7 +67,7 @@ export default function Featured() {
       >
         {authors.map((author, index)=>(
                 <SwiperSlide key={index}>
-                        <FeaturedCard author={author.author} pic={author.pic} biography={author.biography}></FeaturedCard>
+                        <FeaturedCard id={author.id} author={author.name} biography={author.bio} pic={''}></FeaturedCard>
                 </SwiperSlide>
                 ))}
         </Swiper>

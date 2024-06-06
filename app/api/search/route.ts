@@ -1,35 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
+import axios from 'axios';
+import api from '@/app/lib/api';
 
 export async function POST(request: Request) {
-    const formData = await request.formData()
-    const search = String(formData.get('search'))
-
-    const poems = [
-        {
-            poetry: 'اسم القصيدة 1',
-            author: 'اسم الشاعر 1',
-            content: [
-                'هِيَ السِحرُ إِلّا أَنَّ لِلسِحرِ رُقيَةً ... وَأَنِّيَ لا أُلفي لَها الدَهرَ راقَيا',
-                'إِذا نَحنُ أَدلَجنا وَأَنتِ أَمامَنا ... كَفا لِمَطايانا بِذِكراكِ هادِيا'
-            ]
-        },
-        {
-            poetry: 'اسم القصيدة 2',
-            author: 'اسم الشاعر 2',
-            content: [
-                'هِيَ السِحرُ إِلّا أَنَّ لِلسِحرِ رُقيَةً ... وَأَنِّيَ لا أُلفي لَها الدَهرَ راقَيا',
-                'إِذا نَحنُ أَدلَجنا وَأَنتِ أَمامَنا ... كَفا لِمَطايانا بِذِكراكِ هادِيا'
-            ]
-        },
-        {
-            poetry: 'اسم القصيدة 3',
-            author: 'اسم الشاعر 3',
-            content: [
-                'هِيَ السِحرُ إِلّا أَنَّ لِلسِحرِ رُقيَةً ... وَأَنِّيَ لا أُلفي لَها الدَهرَ راقَيا',
-                'إِذا نَحنُ أَدلَجنا وَأَنتِ أَمامَنا ... كَفا لِمَطايانا بِذِكراكِ هادِيا'
-            ]
-        }
-    ]
-
-    return NextResponse.json({ poems });
+  try {
+    const formData = await request.json();
+    const { prompt } = formData;
+    const response = await api.get('/poems/search', { params:{ prompt: prompt}
+    });
+    return NextResponse.json(response.data);
+  } catch (error) {
+    console.error('Search error:', error);
+    return NextResponse.json({ error: 'Search failed' }, { status: 500 });
+  }
 }

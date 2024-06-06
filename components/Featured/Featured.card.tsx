@@ -7,11 +7,12 @@ import arabic from '../../public/arabic.svg'
 interface ICard{
         author: string,
         biography: string,
-        pic: string
+        pic: string,
+        id: number
 }
-export default function FeaturedCard({author, biography, pic}: ICard) {
+export default function FeaturedCard({author, biography, pic, id}: ICard) {
   return (
-   <div className="flex bg-green p-10 rounded-2xl gap-2 h-72 overflow-hidden justify-between relative" >
+   <div className="flex bg-green p-10 rounded-2xl gap-2 w-[580px] h-72 overflow-hidden justify-between relative" >
 
         <Image width={198}  className='z-10' src={moufdi} alt='author'></Image>
         <div className="flex z-10 flex-col gap-4 text-right">
